@@ -26,7 +26,8 @@ jq_script='
 }
 '
 
-regal lint "${INPUT_POLICY_PATH}" "${INPUT_REGAL_FLAGS}" -f json \
+# shellcheck disable=SC2086
+regal lint "${INPUT_POLICY_PATH}" ${INPUT_REGAL_FLAGS} -f json \
   | jq "$jq_script" -c \
   | reviewdog -f="rdjsonl" \
       -name="regal" \
@@ -34,4 +35,4 @@ regal lint "${INPUT_POLICY_PATH}" "${INPUT_REGAL_FLAGS}" -f json \
       -filter-mode="${INPUT_FILTER_MODE}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       -level="${INPUT_LEVEL}" \
-      "${INPUT_REVIEWDOG_FLAGS}"
+      ${INPUT_REVIEWDOG_FLAGS}
