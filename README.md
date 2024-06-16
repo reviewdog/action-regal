@@ -7,7 +7,8 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-regal?logo=github&sort=semver)](https://github.com/reviewdog/action-regal/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
-TODO: demo image
+![github-pr-review demo](images/pr-comment.png)
+![github-pr-check demo](images/pr-check.png)
 
 This action runs [regal](https://docs.styra.com/regal) with [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests to improve experience.
 
