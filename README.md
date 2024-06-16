@@ -60,9 +60,8 @@ inputs:
 name: reviewdog
 on: [pull_request]
 jobs:
-  # TODO: change `linter_name`.
   linter_name:
-    name: runner / <linter-name>
+    name: runner / regal
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
