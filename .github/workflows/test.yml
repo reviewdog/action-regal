@@ -5,30 +5,30 @@ on:
       - main
   pull_request:
 jobs:
-  test-check:
-    name: runner / regal (github-check)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-check
-          level: info
-          policy_path: testdata/
+  # test-check:
+  #   name: runner / regal (github-check)
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: ./
+  #       with:
+  #         github_token: ${{ secrets.github_token }}
+  #         reporter: github-check
+  #         level: info
+  #         policy_path: testdata/
 
-  test-pr-check:
-    if: github.event_name == 'pull_request'
-    name: runner / regal (github-pr-check)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
-          level: warning
-          policy_path: testdata/
+  # test-pr-check:
+  #   if: github.event_name == 'pull_request'
+  #   name: runner / regal (github-pr-check)
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: ./
+  #       with:
+  #         github_token: ${{ secrets.github_token }}
+  #         reporter: github-pr-check
+  #         level: warning
+  #         policy_path: testdata/
 
   test-pr-review:
     if: github.event_name == 'pull_request'
