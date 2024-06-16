@@ -17,31 +17,31 @@ jobs:
           level: info
           policy_path: testdata/
 
-  # test-pr-check:
-  #   if: github.event_name == 'pull_request'
-  #   name: runner / regal (github-pr-check)
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: ./
-  #       with:
-  #         github_token: ${{ secrets.github_token }}
-  #         reporter: github-pr-check
-  #         level: warning
-  #         policy_path: testdata/
+  test-pr-check:
+    if: github.event_name == 'pull_request'
+    name: runner / regal (github-pr-check)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-check
+          level: warning
+          policy_path: testdata/
 
-  # test-pr-review:
-  #   if: github.event_name == 'pull_request'
-  #   name: runner / regal (github-pr-review)
-  #   permissions:
-  #     pull-requests: write
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: ./
-  #       with:
-  #         github_token: ${{ secrets.github_token }}
-  #         reporter: github-pr-review
-  #         level: error
-  #         reviewdog_flags: -filter-mode=file -fail-on-error
-  #         policy_path: testdata/
+  test-pr-review:
+    if: github.event_name == 'pull_request'
+    name: runner / regal (github-pr-review)
+    permissions:
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          level: error
+          reviewdog_flags: -filter-mode=file -fail-on-error
+          policy_path: testdata/
