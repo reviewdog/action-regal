@@ -33,6 +33,8 @@ jobs:
   test-pr-review:
     if: github.event_name == 'pull_request'
     name: runner / regal (github-pr-review)
+    permissions:
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
