@@ -14,6 +14,7 @@ This action runs [regal](https://docs.styra.com/regal) with [reviewdog](https://
 
 ## Input
 
+<!-- markdownlint-disable MD013 -->
 ```yaml
 inputs:
   github_token:
@@ -61,6 +62,7 @@ inputs:
     description: 'Additional regal lint flags'
     default: ''
 ```
+<!-- markdownlint-enable MD013 -->
 
 ## Usage
 
