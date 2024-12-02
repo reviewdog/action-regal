@@ -6,7 +6,7 @@ if [ -n "${GITHUB_WORKSPACE}" ] ; then
   git config --global --add safe.directory "${GITHUB_WORKSPACE}" || exit 1
 fi
 
-wget -O /usr/local/bin/regal -q "https://github.com/StyraInc/regal/releases/download/"${INPUT_REGAL_VERSION}"/regal_Linux_x86_64" \
+wget -O /usr/local/bin/regal -q "https://github.com/StyraInc/regal/releases/download/${INPUT_REGAL_VERSION}/regal_Linux_x86_64" \
     && chmod +x /usr/local/bin/regal
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
