@@ -6,7 +6,7 @@ if [ -n "${GITHUB_WORKSPACE}" ] ; then
   git config --global --add safe.directory "${GITHUB_WORKSPACE}" || exit 1
 fi
 
-wget -O /usr/local/bin/regal -q "https://github.com/StyraInc/regal/releases/download/"${INPUT_REGAL_VERSION}"/regal_Linux_x86_64" \
+wget -O /usr/local/bin/regal -q "https://github.com/StyraInc/regal/releases/download/${INPUT_REGAL_VERSION}/regal_Linux_x86_64" \
     && chmod +x /usr/local/bin/regal
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
@@ -33,6 +33,7 @@ regal lint "${INPUT_POLICY_PATH}" ${INPUT_REGAL_FLAGS} -f json \
       -name="regal" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
       -filter-mode="${INPUT_FILTER_MODE}" \
+      -fail-level="${INPUT_FAIL_LEVEL}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       -level="${INPUT_LEVEL}" \
       ${INPUT_REVIEWDOG_FLAGS}
