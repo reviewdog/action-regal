@@ -9,7 +9,7 @@ jobs:
     name: runner / regal (github-check)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./
         with:
           github_token: ${{ secrets.github_token }}
@@ -22,7 +22,7 @@ jobs:
     name: runner / regal (github-pr-check)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./
         with:
           github_token: ${{ secrets.github_token }}
@@ -37,7 +37,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./
         with:
           github_token: ${{ secrets.github_token }}
