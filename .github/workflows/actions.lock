@@ -6,7 +6,7 @@ workflows:
     '.github/workflows/depup.yml':
         - 'actions/checkout@v6.1.0'
         - 'peter-evans/create-pull-request@v8.1.1'
-        - 'reviewdog/action-depup@v1.6.5'
+        - 'reviewdog/action-depup@v1.6.7'
     '.github/workflows/dockerimage.yml':
         - 'actions/checkout@v6.1.0'
     '.github/workflows/release.yml':
@@ -54,9 +54,9 @@ dependencies:
         commit: 'sha1-a86fdb2da29e06d659cd3bd528095479a2c5c01e'
         owner_id: 48765237
         repo_id: 277568797
-    'reviewdog/action-depup@v1.6.5':
-        ref: 'v1.6.5'
-        commit: 'sha1-99f7aecf3e4d06d5a3faf190dae5dc79ac530b5a'
+    'reviewdog/action-depup@v1.6.7':
+        ref: 'v1.6.7'
+        commit: 'sha1-a03fa2103b273193becba8cca43a992b9173f5dc'
         owner_id: 48765237
         repo_id: 234837904
     'reviewdog/action-hadolint@v1.55.0':
